@@ -51,7 +51,7 @@ let orderSummary = "\nSlim Fit Jeans\n" + "Nike Crew Neck\n" + "Nike Dunks.\n";
 let customerName = "Sasha Morgan";
 
 const CUSTOMER_MESSAGE = `Greetings ${customerName}, thank you for shopping with us. Your order total is ${19.99}. 
-The items you purchased were ${orderSummary} If you have any questions please contact Special Agent Sasha.`;
+The items you purchased were: ${orderSummary} If you have any questions please contact Special Agent Sasha.`;
 
 function order() {
     return CUSTOMER_MESSAGE;
@@ -77,9 +77,51 @@ let favortieFood = [ //array
 
 //floating-point number is any number where we want to include the decimal in the number. Converting a number to integer will remove the decimal. 
 const today = new Date;
-const dt = Date;
 let msg;
-msg = dt < 12 ? ("Good Morning,") : ("Good Evening,") + ` Welcome back to another day of programming. Today's date is ${today.toDateString()}. Let's continue programming.`;
+msg = today < 12 ? ("Good Morning,") : ("Good Evening,") + ` Welcome back to another day of programming. Today's date is ${today.toDateString()}. Let's continue programming.`;
 let word = document.getElementById('myMessage')
 word.innerHTML = msg;
-console.log(today.toDateString());
+
+const month = today.getMonth();
+let celebration;
+switch(month) {
+    case 0:
+        celebration = "Aint shit going on in January.";
+        break;
+    case 1:
+        celebration = "Valentines Day is this month, plus it's black history month.";
+        break;
+    case 2:
+        celebration = "Aint shit going on in March.";
+        break;
+    case 3:
+        celebration = "Aint shit going on in April.";
+        break;
+    case 4:
+        celebration = "It's my birthday month.";
+        break;
+    case 5:
+        celebration = "Aint shit going on in June.";
+        break;
+    case 6:
+        celebration = "Corey's birthday and 4th of July this month.";
+        break;
+    case 7:
+        celebration = "We going camping this month.";
+        break;
+    case 8:
+        celebration = "Aint shit going on in September.";
+        break;
+    case 9:
+        celebration = "Aint shit going on in October.";
+        break;
+    case 10:
+        celebration = "Thanksgiving is this month!";
+        break;
+    case 11:
+        celebration = "Ok, so we got Jaiden's birthday, Khayla's birthday, Christmas, and New Years this month.";
+        break;
+}
+
+let holidayMessage = document.getElementById('holiday');
+holidayMessage.innerHTML = celebration;
