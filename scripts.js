@@ -1,5 +1,6 @@
-let firstname = "Cameron";
-let suffix = " Is The Best!";
+let authorsFirstName = "Cameron";
+let authorsLastName = " T";
+let authorsFullName = authorsFirstName + authorsLastName;
 
 
 const ball = document.getElementById("ball");
@@ -44,3 +45,41 @@ function up() {
     ball.style.top = y + "px"; //Adds pixels to the y position
 }
 
+
+let orderTotal = 19.99;
+let orderSummary = "\nSlim Fit Jeans\n" + "Nike Crew Neck\n" + "Nike Dunks.\n";
+let customerName = "Sasha Morgan";
+
+const CUSTOMER_MESSAGE = `Greetings ${customerName}, thank you for shopping with us. Your order total is ${19.99}. 
+The items you purchased were ${orderSummary} If you have any questions please contact Special Agent Sasha.`;
+
+function order() {
+    return CUSTOMER_MESSAGE;
+}
+
+const user = { //object
+    name:"Cameron",
+    age: 28,
+    address: "123 Chill Ville",
+    city: "Atlanta", 
+    occupation: "Business Owner", 
+    maritalStatus: "Married"
+}
+
+let favortieFood = [ //array
+    'tacos',
+    'pizza',
+    'chicken',
+    'steak',
+    'burger',
+    'shrimp'
+]
+
+//floating-point number is any number where we want to include the decimal in the number. Converting a number to integer will remove the decimal. 
+const today = new Date;
+const dt = Date;
+let msg;
+msg = dt < 12 ? ("Good Morning,") : ("Good Evening,") + ` Welcome back to another day of programming. Today's date is ${today.toDateString()}. Let's continue programming.`;
+let word = document.getElementById('myMessage')
+word.innerHTML = msg;
+console.log(today.toDateString());
