@@ -66,7 +66,7 @@ const user = { //object
     maritalStatus: "Married"
 }
 
-let favortieFood = [ //array
+const favortieFood = [ //array
     'tacos',
     'pizza',
     'chicken',
@@ -119,9 +119,43 @@ switch(month) {
         celebration = "Thanksgiving is this month!";
         break;
     case 11:
-        celebration = "Ok, so we got Jaiden's birthday, Khayla's birthday, Christmas, and New Years this month.";
+        celebration = "This month we got Khayla's birthday, Jaiden's birthday, Khayla's and I anniversary, Christmas, and New Years.";
         break;
-}
+} //I can also define months with celebrations and set a default message to apply when there isnt a celebration that month. 
 
 let holidayMessage = document.getElementById('holiday');
 holidayMessage.innerHTML = celebration;
+
+
+let topic = "<h3>This object was looped through using a 'for...in' loop which is frowned upon. Here are some properties stored about the author in an object:</h3>";
+for (prop in user) {
+    topic = `${topic}\n ${prop}:${user[prop]} <br>`;
+    document.getElementById('objprop').innerHTML = topic;
+};
+
+
+let foodDisplay = favortieFood.map(
+    (foodList) => `<li>${foodList}</li>`
+).join('');
+
+document.getElementById('myFoods').innerHTML = foodDisplay;
+
+
+let randomNumber = Math.floor(Math.random()*10);
+console.log(randomNumber);
+let randomResult = randomNumber < 5 ? ("The number is less than 5!") : ("The number is greater than 5!");
+document.getElementById('randomGenerator').innerHTML = randomResult;
+
+let randomPayment = Math.floor(Math.random() * 100);
+let paymentArray = [0];
+let newPayment = document.getElementById('randomPayment');
+document.addEventListener('click',addToPayments);
+function addToPayments(e) {
+    if (e.code === 'click') {
+        let newArray = paymentArray.push(randomPayment);
+        return newArray;
+    }
+}
+
+console.log(addToPayments());
+
