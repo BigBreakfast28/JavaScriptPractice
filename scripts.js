@@ -1,5 +1,5 @@
 let authorsFirstName = "Cameron";
-let authorsLastName = " T";
+let authorsLastName = "X";
 let authorsFullName = authorsFirstName + authorsLastName;
 
 
@@ -146,16 +146,36 @@ console.log(randomNumber);
 let randomResult = randomNumber < 5 ? ("The number is less than 5!") : ("The number is greater than 5!");
 document.getElementById('randomGenerator').innerHTML = randomResult;
 
-let randomPayment = Math.floor(Math.random() * 100);
-let paymentArray = [0];
-let newPayment = document.getElementById('randomPayment');
-document.addEventListener('click',addToPayments);
-function addToPayments(e) {
-    if (e.code === 'click') {
-        let newArray = paymentArray.push(randomPayment);
-        return newArray;
-    }
+
+
+const myDog = {}
+myDog.furColor = "brown";
+myDog.eyeColor = "brown";
+myDog.height = '1 Foot';
+myDog.fullName = {firstName : "Sasha", lastName : "Morgan" }
+console.log(myDog);
+
+function Cat(name,color) {
+    this.name = name;
+    this.color = color;
 }
 
-console.log(addToPayments());
+const familyCat = new Cat('Marilyn', 'Black and White');
+console.log(familyCat);
+const neighborsCat = new Cat('Puddin', "Calicoat");
+console.log(neighborsCat);
+const coreysCat = {}
+coreysCat.name = 'Thor';
+coreysCat.color = 'Gray';
+console.log(coreysCat);
 
+const breakfast = {
+    protein: "Eggs and Sausage",
+    grains: "Grits",
+    fruit: "apple and bananas"
+}
+
+const firstMeal = Object.create(breakfast);
+console.log(firstMeal);
+firstMeal.vegetable = "peppers";
+firstMeal.grains = "toast";
