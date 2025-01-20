@@ -119,4 +119,21 @@ function estimatedTripDuration(distance) {
 water = false;
 let distance = 40;
 
-console.log(`It took me a long time to travel from Chicago to Atlanta, approx ${estimatedTripDuration(distance)} hours;`)
+console.log(`It took me a long time to travel from Chicago to Atlanta, approx ${estimatedTripDuration(distance)} hours;`);
+
+const movieOptions = ['I am legend', 'Sonic', 'A Walk To Remember'];
+
+const chooseMovie = (choices) => {
+    return choices[Math.floor(Math.random() * choices.length)];
+}
+
+const displayMovie = () => {
+    const movieChoice = chooseMovie(movieOptions);
+    document.getElementById('movie-option').innerText = movieChoice;
+}
+
+document.getElementById('movieButton').onclick = function() {
+    displayMovie();  
+}
+
+
