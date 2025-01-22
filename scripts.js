@@ -98,7 +98,7 @@ switch(month) {
         celebration = "Aint shit going on in April.";
         break;
     case 4:
-        celebration = "It's my birthday month.";
+        celebration = "It's my birthday month. RIP Dad";
         break;
     case 5:
         celebration = "Aint shit going on in June.";
@@ -110,13 +110,13 @@ switch(month) {
         celebration = "We going camping this month.";
         break;
     case 8:
-        celebration = "Aint shit going on in September.";
+        celebration = "Aint shit going on in September. Moms birthday is this month.";
         break;
     case 9:
         celebration = "Aint shit going on in October.";
         break;
     case 10:
-        celebration = "Thanksgiving is this month!";
+        celebration = "Thanksgiving is this month! Chris birthday is this month";
         break;
     case 11:
         celebration = "This month we got Khayla's birthday, Jaiden's birthday, Khayla's and I anniversary, Christmas, and New Years.";

@@ -131,9 +131,92 @@ const displayMovie = () => {
     const movieChoice = chooseMovie(movieOptions);
     document.getElementById('movie-option').innerText = movieChoice;
 }
-
+//New Test function
 document.getElementById('movieButton').onclick = function() {
     displayMovie();  
+}
+
+const notePad = notes => {
+    return notes;
+}
+
+const classnotes = [
+   {
+    name: "Sandy",
+    occupation: "Garbage Man"
+   },
+
+   {
+    name: "Mandy",
+    occupation: "Punisher"
+   },
+
+   {
+    name: "Randy",
+    occupation: "Global Locator"
+   },
+]
+
+const sample = ['Valentines Day', 'Happy New Year', 'Smokey Robinson'];
+
+const displayIt = random => {
+   return random[Math.floor(Math.random() *random.length)];
+}
+
+const getItOut = () => {
+    const wendys = displayIt(sample);
+    document.getElementById('noteArea').innerText = wendys;
+}
+
+
+document.getElementById('noteButton').onclick = () => {
+   character.devilFruit("logia")
+}
+
+//Arrays can NOT display objects and templates literals when called upon.
+
+//Writing methods which is really just an function within an object.
+const batMan = {
+        strenth: 0,
+        powerlevel(stamina) {
+            this.strenth = stamina;
+            console.log(`Batman has a high power level of ${this.strenth}`);
+        }
+}
+
+const character = {
+    dangerLevel : "",
+    devilFruit(type) {
+        this.dangerLevel = type;
+        document.getElementById('noteArea') = `This user has a very high danger level based on the type of devil fruit they ate. The devilfruit this guy ate a ${this.dangerLevel} type.`;
+    }
+}
+
+const myCar = {
+    speed : 0,
+}
+
+const myScooter = {
+    speed : 0,
+}
+
+function drive(vehicle, speedLimit) {
+    vehicle.speed = speedLimit;
+    console.log(`Driving at ${vehicle.speed}mph.`)
+}
+
+
+const soccerPlayer = {
+    activityLevel:0,
+};
+
+const wrestler = {
+    activityLevel:0,
+}
+
+function twist(person, contort) {
+    person.activityLevel = contort;
+    console.log(`This person is an athlet with a high activity level: ${person.activityLevel}`)
 }
 
 
