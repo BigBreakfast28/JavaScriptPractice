@@ -194,29 +194,61 @@ const character = {
 
 const myCar = {
     speed : 0,
+    operate(speedLimit,callback) {
+    boundCallback = callback.bind(this);
+    boundCallback(speedLimit);
+    console.log(`My car is driving at ${this.speed}`);
+    }
 }
 
-const myScooter = {
-    speed : 0,
+function drive(speed) {
+    this.speed = speed;
+    console.log(`Start driving my car at ${this.speed}`);
 }
 
-function drive(vehicle, speedLimit) {
-    vehicle.speed = speedLimit;
-    console.log(`Driving at ${vehicle.speed}mph.`)
+const notes = {
+    x:'',
+    firstStatement(something,callback) {
+        boundCallback = callback.bind(this);
+        boundCallback(something);
+        console.log(`Super heros have amazing capabilities. ${this.x}`);
+    }
 }
 
-
-const soccerPlayer = {
-    activityLevel:0,
-};
-
-const wrestler = {
-    activityLevel:0,
-}
-
-function twist(person, contort) {
-    person.activityLevel = contort;
-    console.log(`This person is an athlet with a high activity level: ${person.activityLevel}`)
+function repeatParameter(x) {
+    this.x = x;
+    console.log(`I'm not exactly sure what's going to be displayed here either ${this.x}`);
 }
 
 
+const firstSubject = {
+    topic: '',
+    learnSubject(options, callback) {
+        boundCallback = callback.bind(this);
+        boundCallback(options);
+        console.log(`The FIRST subject I'm going to learn is ${this.topic}`);
+    }
+}
+
+function secondSubject(topic) {
+    this.topic = topic;
+    console.log(`The SECOND subject I'm going to learn is ${this.topic}`);
+}
+
+firstSubject.learnSubject('math', secondSubject);
+
+const evilVillan = {
+    powerlevel : 27,
+    inputPower(level,input) {
+       boundinput = input.bind(this);
+       boundinput(level);
+       console.log(`First powerlevel of evil villan: ${this.powerlevel}`);
+    }
+}
+
+const sidekickVillan = powerlevel => {
+    this.powerlevel = powerlevel;
+    console.log(`Second powerlevel of evil villan: ${this.powerlevel}`);
+}
+
+evilVillan.inputPower(85, sidekickVillan);
