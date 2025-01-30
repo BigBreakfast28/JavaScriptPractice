@@ -5,3 +5,11 @@
     height: 20px;
     position: relative;
 }
+
+.foodOptions {
+    padding: 0.5vw;
+}
+
+.foodBtn {
+    margin-left: 1vw;
+}

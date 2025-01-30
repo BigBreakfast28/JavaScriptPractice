@@ -1,3 +1,8 @@
+const cheeseFries = document.getElementById('cheeseFries');
+const sliceOfPizza = document.getElementById('cheeseFries');
+const macAndCheese = document.getElementById('cheeseFries');
+const dirtyRice = document.getElementById('cheeseFries');
+
 function Vehicle(speed) {
     this.speed = speed;
     this.movingForward = function() {
@@ -252,3 +257,47 @@ const sidekickVillan = powerlevel => {
 }
 
 evilVillan.inputPower(85, sidekickVillan);
+
+const bookstore = {
+    books : ['JavaScript Dummies', 'Python', 'Webdev Dummies', 'Machine Learning'],
+    displayBookStore() {
+        const bookArea = document.getElementById('bookArea');
+        //fill in the rest of the notes taken here. I need to create the variable that ties to the books array with the map method. 
+        const getBooks = this.books.map((book) => `<p>${book}</p>`)
+        bookArea.innerHTML = getBooks.join('');
+    },
+
+    removeBook(bookName)  {
+        let shortList = this.books.filter((book) => book != bookName);
+        this.books = shortList;
+    },
+
+    addbook(bookName) {
+        let longList = this.books.filter((book) => book = bookName);
+        this.books = longList;
+    },
+};
+//In order to create a succesful food store then I need to create two seperate objects: fast food place and shopping cart 
+
+const burgerKing = {
+    combos: ['Whopper', 'Spicy Royal Crispy chicken', 'Chicken Nuggets'],
+    displayMenu() {
+        const menu = this.combos.map((meal) => `<p>${meal}</p>`);
+        const renderMenu = document.getElementById('menu');
+        renderMenu.innerHTML = menu.join('');
+    },
+
+    removeMenuItem(combo) {
+        let newMenu = this.combos.filter((item) => item != combo);
+        this.combos = newMenu;
+    },
+
+    /*addmenuItem(combo) {
+        let newMenu = this.combos.push((item) => item = combo);
+        this.combos = newMenu;
+    }
+    Something is going wrong here where the array won't display the newly added item. */
+}
+
+
+
