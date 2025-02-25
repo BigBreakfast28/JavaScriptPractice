@@ -260,44 +260,52 @@ evilVillan.inputPower(85, sidekickVillan);
 
 const bookstore = {
     books : ['JavaScript Dummies', 'Python', 'Webdev Dummies', 'Machine Learning'],
-    displayBookStore() {
-        const bookArea = document.getElementById('bookArea');
-        //fill in the rest of the notes taken here. I need to create the variable that ties to the books array with the map method. 
-        const getBooks = this.books.map((book) => `<p>${book}</p>`)
-        bookArea.innerHTML = getBooks.join('');
-    },
-
     removeBook(bookName)  {
         let shortList = this.books.filter((book) => book != bookName);
         this.books = shortList;
+        this.displayBookStore();
     },
+    displayBookStore() {
+        const bookArea = document.getElementById('bookstore');
+        //fill in the rest of the notes taken here. I need to create the variable that ties to the books array with the map method. 
+        const bookList = this.books.map((book) => `<p>${book}</p>`);//Map is used to transform the array in a HTML paragraph element in "string" notation.
+        bookArea.innerHTML = bookList.join('');
 
-    addbook(bookName) {
-        let longList = this.books.filter((book) => book = bookName);
-        this.books = longList;
+        shoppingCart.displayCart(this.removeBook.bind(this));
     },
 };
+
+
+const shoppingCart = {
+    itemsInCart: ['Python'],
+    handleClick(removeBook) {
+        removeBook(this.itemsInCart);
+    },
+    displayCart(clickHandler) {
+        const renderTarget = document.getElementById('bookCart');
+        const itemsInCart = this.itemsInCart.map(item => `<p>${item}</p>`)
+        const checkOutButton = "<button id='checkout'>Check Out</button>";
+
+        renderTarget.innerHTML = itemsInCart.join('') + checkOutButton;
+        document
+            .getElementById('checkout')
+            .addEventListener('click', () => this.handleClick(clickHandler));
+    },
+};
+
+bookstore.displayBookStore();
+
+
 //In order to create a succesful food store then I need to create two seperate objects: fast food place and shopping cart 
 
 const burgerKing = {
     combos: ['Whopper', 'Spicy Royal Crispy chicken', 'Chicken Nuggets'],
-    displayMenu() {
-        const menu = this.combos.map((meal) => `<p>${meal}</p>`);
-        const renderMenu = document.getElementById('menu');
-        renderMenu.innerHTML = menu.join('');
-    },
-
-    removeMenuItem(combo) {
-        let newMenu = this.combos.filter((item) => item != combo);
-        this.combos = newMenu;
-    },
-
-    /*addmenuItem(combo) {
-        let newMenu = this.combos.push((item) => item = combo);
-        this.combos = newMenu;
+    removeCombo() {
+        
     }
-    Something is going wrong here where the array won't display the newly added item. */
+    //Something is going wrong here where the array won't display the newly added item. */
 }
+
 
 
 
