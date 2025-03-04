@@ -298,13 +298,9 @@ bookstore.displayBookStore();
 
 //In order to create a succesful food store then I need to create two seperate objects: fast food place and shopping cart 
 
-const burgerKing = {
-    combos: ['Whopper', 'Spicy Royal Crispy chicken', 'Chicken Nuggets'],
-    removeCombo() {
-        
-    }
-    //Something is going wrong here where the array won't display the newly added item. */
-}
+
+
+
 
 
 
